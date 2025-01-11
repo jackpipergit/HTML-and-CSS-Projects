@@ -1,1 +1,2 @@
 .DS_Store
+**/.DS_Store        # This ignores .DS_Store in all directories and subdirectories
