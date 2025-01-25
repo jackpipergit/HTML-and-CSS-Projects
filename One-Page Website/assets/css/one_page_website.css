@@ -5,6 +5,10 @@
     --text-color: #333;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -230,3 +234,4 @@ footer a:hover {
         font-size: 1.5rem;
     }
 }
+
