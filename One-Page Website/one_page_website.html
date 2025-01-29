@@ -31,23 +31,86 @@
         <h3>Becoming the UK's Leading Roof Sheet & Decking Supplier</h3>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/mvBpAq86IF8" frameborder="0"
             allowfullscreen></iframe>
-        <p>At Cladco Profiles, we've established ourselves as a trusted name in the roofing and decking industry. Our
-            commitment to quality products and exceptional customer service has driven our growth to become one of the
-            UK's leading suppliers.</p>
-        <p>From our base in Devon, we serve customers nationwide with our comprehensive range of roofing sheets,
-            composite decking, and associated products. Our team brings decades of experience to every customer
-            interaction, ensuring you get the right product for your project.</p>
+        <div class="about-text">
+            <p>At Cladco Profiles, we've established ourselves as a trusted name in the roofing and decking industry. Our
+                commitment to quality products and exceptional customer service has driven our growth to become one of the
+                UK's leading suppliers.</p>
+                <p>From our base in Devon, we serve customers nationwide with our comprehensive range of roofing sheets,
+                    composite decking, and associated products. Our team brings decades of experience to every customer
+                    interaction, ensuring you get the right product for your project.</p>
+            </div>
     </section>
 
-    <!-- Product info section -->
+
+    <!-- Products section -->
     <section id="products">
         <h2>Our Products</h2>
-        <img src="assets/media/roofing-panels.png" alt="Metal Roofing Sheets" width="300">
-        <img src="assets/media/flashings.png" alt="Flashings" width="300">
-        <img src="assets/media/accessories.png" alt="Accessories" width="300">
-        <img src="assets/media/roofing-sample.png" alt="Order A Sample" width="300">
-        <img src="assets/media/purlins.png" alt="Z-Purlins & Timber" width="300">
+        <div class="product-row">
+            <img src="assets/media/roofing-panels.png" alt="Metal Roofing Sheets" width="300"
+                onclick="openModal();currentSlide(1)" class="gallery-img hover-shadow">
+            <img src="assets/media/flashings.png" alt="Flashings" width="300" onclick="openModal();currentSlide(2)"
+                class="gallery-img hover-shadow">
+            <img src="assets/media/accessories.png" alt="Accessories" width="300" onclick="openModal();currentSlide(3)"
+                class="gallery-img hover-shadow">
+        </div>
+        <div class="product-row">
+            <img src="assets/media/roofing-sample.png" alt="Order A Sample" width="300"
+                onclick="openModal();currentSlide(4)" class="gallery-img hover-shadow">
+            <img src="assets/media/purlins.png" alt="Z-Purlins & Timber" width="300"
+                onclick="openModal();currentSlide(5)" class="gallery-img hover-shadow">
+        </div>
         <p>View our range of roofing sheets, side cladding, sample and accessories.</p>
+
+        <div id="lightboxModal" class="modal">
+            <span class="close cursor" onclick="closeModal()">&times;</span>
+            <div class="modal-content">
+                <div class="mySlides">
+                    <img src="assets/media/roofing-panels.png" alt="Metal Roofing Sheets">
+                </div>
+                <div class="mySlides">
+                    <img src="assets/media/flashings.png" alt="Flashings">
+                </div>
+                <div class="mySlides">
+                    <img src="assets/media/accessories.png" alt="Accessories">
+                </div>
+                <div class="mySlides">
+                    <img src="assets/media/roofing-sample.png" alt="Order A Sample">
+                </div>
+                <div class="mySlides">
+                    <img src="assets/media/purlins.png" alt="Z-Purlins & Timber">
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                <div class="caption-container">
+                    <p id="caption"></p>
+                </div>
+
+                <!-- Thumbnail Navigation -->
+                <div class="thumbnail-row">
+                    <div class="thumbnail-column">
+                        <img class="lightbox-img" src="assets/media/roofing-panels.png" onclick="currentSlide(1)"
+                            alt="Metal Roofing Sheets">
+                    </div>
+                    <div class="thumbnail-column">
+                        <img class="lightbox-img" src="assets/media/flashings.png" onclick="currentSlide(2)" alt="Flashings">
+                    </div>
+                    <div class="thumbnail-column">
+                        <img class="lightbox-img" src="assets/media/accessories.png" onclick="currentSlide(3)"
+                            alt="Accessories">
+                    </div>
+                    <div class="thumbnail-column">
+                        <img class="lightbox-img" src="assets/media/roofing-sample.png" onclick="currentSlide(4)"
+                            alt="Order A Sample">
+                    </div>
+                    <div class="thumbnail-column">
+                        <img class="lightbox-img" src="assets/media/purlins.png" onclick="currentSlide(5)"
+                            alt="Z-Purlins & Timber">
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Support request form -->
@@ -93,12 +156,13 @@
         </form>
     </section>
 
-    <!-- Footer with contact info -->
     <footer>
         <p>Contact us: <a href="tel:01837659901">01837 659901</a> | <a
                 href="mailto:info@cladco.co.uk">info@cladco.co.uk</a></p>
         <p>Cladco Profiles Ltd, Unit 5, Beardown Road, Exeter Road Industrial Estate, Okehampton, Devon, EX20 1UA</p>
     </footer>
+
+    <script src="assets/js/one_page_website.js"></script>
 </body>
 
 </html>

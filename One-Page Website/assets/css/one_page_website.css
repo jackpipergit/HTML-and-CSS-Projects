@@ -1,11 +1,10 @@
-/* Base styles */
+/* ============================
+   Base Styles & Variables
+============================ */
 :root {
     --primary-color: #1a4789;
     --secondary-color: #f8f9fa;
     --text-color: #333;
-}
-
-html {
     scroll-behavior: smooth;
 }
 
@@ -17,13 +16,34 @@ body {
     color: var(--text-color);
 }
 
-/* Navigation */
+/* ============================
+   Typography
+============================ */
+h1, h2, h3 {
+    color: var(--primary-color);
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* ============================
+   Navigation
+============================ */
 nav {
     background-color: var(--primary-color);
     padding: 1rem;
     position: sticky;
     top: 0;
     z-index: 100;
+    text-align: center;
 }
 
 nav a {
@@ -39,7 +59,9 @@ nav a:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Hero Section */
+/* ============================
+   Hero Section
+============================ */
 #home {
     background-image: url('../media/roofing-homepage.jpg');
     background-size: cover;
@@ -79,60 +101,63 @@ nav a:hover {
     margin-bottom: 1rem;
 }
 
-/* Other Sections */
+/* ============================
+   Section Layouts
+============================ */
 section {
     padding: 2rem;
-    max-width: 1200px;
 }
 
-h1, h2, h3 {
-    color: var(--primary-color);
-    text-align: center;
-}
-
-h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-}
-
-h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
+/* About Section */
 #about iframe {
     margin: 1rem auto;
     display: block;
-    width: 100%;
+    max-width: 100%;
+    width: 560px;
+    height: 315px; 
 }
 
-/* Products section */
+.about-text {
+    margin: 1rem auto;
+    display: block;
+    max-width: 800px;
+}
+
 #products {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    padding: 2rem;
+    text-align: center;
 }
 
-#products h2 {
-    flex-basis: 100%;
+.product-row {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
 }
 
 #products img {
-    margin: 1rem;
+    margin: 0;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
+    width: 300px;
+    height: auto;
 }
 
 #products img:hover {
     transform: scale(1.05);
+    cursor: pointer;
 }
 
 #products p {
     text-align: center;
+    margin-top: 2rem;
 }
 
-/* Form styling */
+/* ============================
+   Forms
+============================ */
 form {
     max-width: 600px;
     margin: 0 auto;
@@ -145,6 +170,7 @@ input, select, textarea {
     border: 1px solid #ddd;
     border-radius: 4px;
 }
+
 select {
     background-color: var(--secondary-color);
     color: black;
@@ -167,7 +193,9 @@ input[type="submit"]:hover {
     background-color: #123567;
 }
 
-/* Footer */
+/* ============================
+   Footer
+============================ */
 footer {
     background-color: var(--secondary-color);
     padding: 2rem;
@@ -184,8 +212,146 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Responsive design */
+/* ============================
+   Lightbox Modal
+============================ */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    position: relative;
+    margin: auto;
+    background-color: black;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.close {
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.close:hover {
+    color: #999;
+}
+
+.mySlides {
+    display: none;
+    text-align: center;
+}
+
+.mySlides img {
+    max-height: 80vh;
+    width: auto;
+    max-width: 100%;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+.caption-container {
+    text-align: center;
+    padding: 2px 16px;
+    color: white;
+}
+
+#caption {
+    margin: 0.5rem;    
+}
+
+.gallery-img {
+    cursor: pointer;
+}
+
+.thumbnail-row {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    padding: 16px 0;
+    flex-wrap: wrap;
+}
+
+.thumbnail-column {
+    flex: 0 1 150px;
+}
+
+.lightbox-img {
+    width: 150px !important;
+    opacity: 0.6;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.lightbox-img.active,
+.lightbox-img:hover {
+    opacity: 1;
+}
+
+.hover-shadow:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* ============================
+   Responsive Design
+============================ */
 @media (max-width: 768px) {
+    /* Navigation */
     nav {
         padding: 0.5rem;
         flex-direction: column;
@@ -216,22 +382,42 @@ footer a:hover {
         padding: 1rem;
     }
     
+    .product-row {
+        gap: 1rem;
+    }
+    
     #products img {
         width: calc(100% - 2rem);
-        margin: 1rem;
+        max-width: 300px;
     }
+
     #home h1, #home p {
         max-width: 100%;
+    }
+    
+    .prev,
+    .next {
+        padding: 8px;
+        font-size: 16px;
+    }
+
+    .thumbnail-column {
+        flex: 0 1 100px;
+    }
+
+    #about iframe {
+        width: 100%;
+        height: 56.25vw; 
+        max-height: 315px;
     }
 }
 
 @media (max-width: 480px) {
     #home {
-        min-height: 40vh;
+        min-height: 50vh;
     }
 
     #home h1 {
         font-size: 1.5rem;
     }
 }
-
